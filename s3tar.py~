@@ -3,15 +3,13 @@ import tarfile
 import os
 import shutil
 
-def get_bucket(creds,bucketname):
-    bucket = fetch_creds.return_bucket(creds, bucketname)
-    return bucket
+bucket = fetch_creds.return_bucket(creds, bucket)
 
-def list_dir(bucket,s3dir):
-    src_list=[]
-    for i,k in enumerate(bucket.list(prefix=s3dir)):
-        src_list.append([str(k.name), k.size])
-    return src_list
+
+src_list=[]
+for i,k in enumerate(bucket.list(prefix='data/Projects/ACPI/Outputs/')):
+    src_list.append([str(k.name), k.size])
+
 
 
 
